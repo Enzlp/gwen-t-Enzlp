@@ -1,6 +1,6 @@
 package cl.uchile.dcc
 package gwent
 
-class Carta {
+class Carta (val nombre: String ){
 
 }
