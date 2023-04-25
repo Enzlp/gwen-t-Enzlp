@@ -1,13 +1,14 @@
 package cl.uchile.dcc
 package gwent
 
-class Mano extends List_mutable {
-  private var size: Int = 0
-  private var mano: Array[Carta] = new Array[Carta](10)
+import scala.collection.mutable.ArrayBuffer
+class Mano {
+  private var mano = ArrayBuffer[Carta]()
   def add(element: Carta): Unit = {
-    mano.add(getSize(), element)
+     mano :+ element
   }
-
-
+  def get(index: Int): Carta ={
+    return mano(0)
+  }
 
 }

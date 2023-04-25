@@ -1,15 +1,20 @@
 package cl.uchile.dcc
 package gwent
 
-class Mazo extends Mano {
-  private var data: Array[Carta] = new Array[Carta](25)
-  def rellenar(): Any = {
-  
-  }
-  def repartir_mano(): Unit = {
+import scala.collection.mutable.ArrayBuffer
 
+class Mazo extends Mano{
+  var largo: Int = 25
+  private var mazo = new ArrayBuffer[Carta]()
+  
+  
+  def robar(): Carta = {
+    var card = mazo(largo)
+    mazo.remove(25)
+    largo -= 1
+    return card
   }
   def revolver(): Any = {
-
+    
   }
 }
