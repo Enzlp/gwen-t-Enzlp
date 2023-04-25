@@ -1,6 +1,7 @@
 package cl.uchile.dcc
-package gwent
+package gwent.cartas
 
+import cl.uchile.dcc.gwent.Carta
 import munit.FunSuite
 
 
