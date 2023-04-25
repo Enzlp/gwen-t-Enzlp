@@ -7,5 +7,7 @@ class Jugador (val nombre: String, var gemas : Int ){
   def robar():Any = {
     var card = mazo.robar()
     mano.add(card)
+    
   }
+  
 }
