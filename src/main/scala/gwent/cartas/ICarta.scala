@@ -3,5 +3,7 @@ package gwent
 
 
 trait ICarta {
+  def refuerzoMoral(): Any
+
 
 }
