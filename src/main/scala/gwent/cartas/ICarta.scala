@@ -1,9 +1,7 @@
 package cl.uchile.dcc
-package gwent
-
+package gwent.cartas
 
 trait ICarta {
-  def refuerzoMoral(): Any
-
+  val nombre: String
 
 }

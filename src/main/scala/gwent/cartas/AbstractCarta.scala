@@ -3,10 +3,10 @@ package gwent.cartas
 
 import java.util.Objects
 
-abstract class Carta (val nombre: String ) extends ICarta {
+abstract class AbstractCarta(val nombre: String ) extends ICarta {
   override def equals(that:Any) : Boolean ={
     if (canEqual(that)){
-      val other = that.asInstanceOf[Carta]
+      val other = that.asInstanceOf[AbstractCarta]
       (this eq other)||(nombre == other.nombre )
     }
     else{

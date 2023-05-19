@@ -1,6 +1,7 @@
 package cl.uchile.dcc
 package gwent.cartas
 
-class EscarchaMordienteCarta {
+
+class EscarchaMordienteCarta extends AbstractCartaUnidad(nombre) {
 
 }

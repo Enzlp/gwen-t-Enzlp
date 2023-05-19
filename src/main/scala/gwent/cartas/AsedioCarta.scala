@@ -1,6 +1,6 @@
 package cl.uchile.dcc
 package gwent.cartas
 
-class Asedio {
+class AsedioCarta {
 
 }
