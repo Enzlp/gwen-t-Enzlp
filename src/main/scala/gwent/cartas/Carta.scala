@@ -1,7 +1,7 @@
 package cl.uchile.dcc
 package gwent.cartas
 
-trait ICarta {
+trait Carta {
   val nombre: String
-
+  val descripcion: String
 }

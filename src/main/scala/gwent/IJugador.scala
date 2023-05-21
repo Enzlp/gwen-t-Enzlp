@@ -1,18 +1,15 @@
 package cl.uchile.dcc
 package gwent
 
-import cl.uchile.dcc.gwent.cartas.ICarta
-
 import scala.collection.mutable.ArrayBuffer
 
 trait IJugador {
-  def mostrarMano(): ArrayBuffer[ICarta]
+  def mano: ArrayBuffer[ICarta]
+
+  def mazo: ArrayBuffer[ICarta]
   
-  def robar(): Any
+  def robarCarta(): ICarta
 
-  def generarMazo(): Any
-
-  def LLenarMano(): Any
-
+  def shuffleMazo(): Unit
 
 }

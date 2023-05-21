@@ -1,47 +1,27 @@
 package cl.uchile.dcc
 package gwent
 
-import cl.uchile.dcc.gwent.cartas.{AbstractCartaUnidad, ICarta}
-
+import gwent.IJugador
+import gwent.cartas.Carta
+import scala.Equals
 import scala.collection.mutable.ArrayBuffer
-import scala.util.Random
-import gwent.cartas.AbstractCartaUnidad
-import gwent.cartas.AbstractCartaClima
-class Jugador (val nombre: String, var gemas : Int ) extends IJugador {
-  private var mano = ArrayBuffer[ICarta]()
-  private var mazo = ArrayBuffer[ICarta]()
+import scala.util.Random as rand
 
-  override def generarMazo(): Any = {
+class Jugador (val nombre: String, var gemas : Int, private var _mano : ArrayBuffer[Carta]
+               ,private var _mazo: ArrayBuffer[Carta]) extends IJugador {
+  override def mano: ArrayBuffer[Carta] = _mano
 
-    for(i<-1 to 18){
-      var cardC = new AbstractCartaClima("Clima")
-      mazo.addOne(cardC);
-    }
-    for(i<-1 to 7){
-      var cardU = new AbstractCartaUnidad("Unidad")
-      mazo.addOne(cardU);
-    }
-    Random.shuffle(mazo);
+  override def mazo: ArrayBuffer[Carta] = _mazo
 
-  }
-
-  override def robar():Any = {
-    var card = mazo.last;
+  override def robarCarta(): Carta = {
+    val card = mazo.last;
     mano.addOne(card);
     mazo.dropRight(1);
-
+    card
   }
 
-  override def LLenarMano(): Any = {
-    for(i <-1 to 10){
-      var card = mazo.last
-      mano.addOne(card);
-      mazo.dropRight(1);
-    }
-  }
-
-  override def mostrarMano(): ArrayBuffer[ICarta] = {
-    mano
+  override def shuffleMazo(): Unit ={
+    _mazo = rand.shuffle(mazo)
   }
 
 
