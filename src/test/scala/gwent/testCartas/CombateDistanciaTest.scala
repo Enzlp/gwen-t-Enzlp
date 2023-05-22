@@ -1,8 +1,9 @@
 package cl.uchile.dcc
-package gwent
+package gwent.testCartas
+
+import gwent.cartas.clases.CombateDistancia
 
 import munit.FunSuite
-import cl.uchile.dcc.gwent.cartas.clases.CombateDistancia
 class CombateDistanciaTest extends FunSuite {
   val nombre1 = "Artis"
   val descripcion1 = "Cada vez que se juegue una unidad, le inflige un daño igual a la mitad de su poder."
@@ -13,8 +14,8 @@ class CombateDistanciaTest extends FunSuite {
     assertEquals(distancia1.descripcion,descripcion1 )
     assertEquals(distancia1.poder, poder1)
   }
-  test("Dos cartas con el mismo nombre deben ser la misma Carta"){
-
+  test("el poder de una carta parte siendo el poder de la carta original"){
+    assertEquals(distancia1.poderActual, poder1)
   }
 
 }

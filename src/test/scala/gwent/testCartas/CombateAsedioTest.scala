@@ -1,7 +1,8 @@
 package cl.uchile.dcc
-package gwent
+package gwent.testCartas
 
-import cl.uchile.dcc.gwent.cartas.clases.CombateAsedio
+import gwent.cartas.clases.CombateAsedio
+
 import munit.FunSuite
 class CombateAsedioTest extends FunSuite{
   val nombre1 = "El Canalla"
