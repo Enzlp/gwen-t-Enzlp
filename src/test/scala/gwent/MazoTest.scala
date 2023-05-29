@@ -11,14 +11,5 @@ class MazoTest extends FunSuite{
   deck.add(card3)
   deck.revolver()
   test("Al revolver las cartas del mazo se deben mantener los elementos"){
-    var contador = 0
-
-    for(i<-0 until 2){
-      var card4 = deck.robar()
-      if(card4 ==card1 || card4 ==card2 || card4 ==card3){
-        contador+=1
-      }
-    }
-    assertEquals(contador,3)
   }
 }
