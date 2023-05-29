@@ -1,9 +1,10 @@
 package cl.uchile.dcc
-package gwent
+package gwent.jugadores
 
-import scala.collection.mutable.ArrayBuffer
 import gwent.cartas.Carta
 import gwent.tablero.ITableroUnidad
+
+import scala.collection.mutable.ArrayBuffer
 
 /**Trait (interfaz) que representa un Jugador en Gwent
  * Posee 6 declaraciones de métodos: mano, mazo, robarCarta(), shuffleMazo(), jugarCarta(indice: Int) y personalBoard
@@ -25,7 +26,7 @@ trait IJugador {
 
   /**Revuelve el mazo del Jugador
    */
-  def shuffleMazo(): Unit
+  def shuffleMazo(): ArrayBuffer[Carta]
 
   /** Juega Carta en un indice de la mano, en el tablero
    */

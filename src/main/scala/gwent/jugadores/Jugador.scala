@@ -1,12 +1,13 @@
 package cl.uchile.dcc
-package gwent
+package gwent.jugadores
 
 import gwent.IJugador
 import gwent.cartas.Carta
+import gwent.tablero.{ITableroClima, ITableroUnidad, TableroUnidad}
+
 import scala.Equals
 import scala.collection.mutable.ArrayBuffer
 import scala.util.Random as rand
-import gwent.tablero.{ITableroClima, TableroUnidad, ITableroUnidad}
 
 
 /** Clase que crea un jugador del juego Gwent
@@ -37,17 +38,19 @@ class Jugador (val nombre: String, var gemas : Int, private var _mano : ArrayBuf
    *  @return Carta que fue robada del mazo
    */
   override def robarCarta(): Carta = {
-    val card = mazo.last;
-    mano.addOne(card);
-    mazo.dropRight(1);
+    val card = mazo.head;
+    _mano.addOne(card);
+    _mazo = _mazo.tail;
     card
   }
 
   /**Revuelve el mazo del jugador
    * Toma el array que representa el mazo del jugador, y revuelve los elementos usando rand.shuffle()
+   * @return El mazo despues de revolverse
    */
-  override def shuffleMazo(): Unit ={
+  override def shuffleMazo(): ArrayBuffer[Carta] ={
     _mazo = rand.shuffle(mazo)
+    _mazo
   }
 
   /**Jugar una Carta en el tablero
@@ -57,7 +60,7 @@ class Jugador (val nombre: String, var gemas : Int, private var _mano : ArrayBuf
    */
   override def jugarCarta(indice: Int): Unit= {
     val card = mano(indice)
-    mano.remove(indice)
+    _mano.remove(indice)
     card.jugarCarta(personalBoard, boardClima)
   }
 
