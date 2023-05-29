@@ -1,7 +1,7 @@
 package cl.uchile.dcc
 package gwent.jugadores
 
-import gwent.IJugador
+import gwent.jugadores.IJugador
 import gwent.cartas.Carta
 import gwent.tablero.{ITableroClima, ITableroUnidad, TableroUnidad}
 

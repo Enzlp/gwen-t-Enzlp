@@ -6,6 +6,7 @@ import munit.FunSuite
 
 import scala.collection.mutable.ArrayBuffer
 import cl.uchile.dcc.gwent.cartas.Carta
+import cl.uchile.dcc.gwent.jugadores.Jugador
 import cl.uchile.dcc.gwent.tablero.{TableroClima, TableroUnidad}
 class TableroTest extends FunSuite{
   /**Definimos parametros para poder generar casos de prueba
@@ -21,14 +22,14 @@ class TableroTest extends FunSuite{
   val card3 = new LluviaTorrencial(nombreCarta, descripcion)
   val card4 = new NieblaImpenetrable(nombreCarta, descripcion)
   val card5 = new CombateAsedio(nombreCarta, descripcion, 5)
-  val card6 = new CombateDistancia("2da", descripcion, 5)
-  val card7 = new CombateCuerpoCuerpo("3era", descripcion, 5)
+  val card6 = new CombateDistancia(nombreCarta, descripcion, 5)
+  val card7 = new CombateCuerpoCuerpo(nombreCarta, descripcion, 5)
 
   val mano1: ArrayBuffer[Carta] = ArrayBuffer()
   val mano2: ArrayBuffer[Carta] = ArrayBuffer()
 
   val mazo1: ArrayBuffer[Carta] = ArrayBuffer(card1, card1)
-  val mazo2: ArrayBuffer[Carta] = ArrayBuffer(card2, card5, card6, card7)
+  val mazo2: ArrayBuffer[Carta] = ArrayBuffer(card7, card6, card5, card2)
 
   val tableroClima1 = new TableroClima
 
@@ -48,19 +49,24 @@ class TableroTest extends FunSuite{
     player1.jugarCarta(0)
     assertEquals(tableroClima1.zonaClima(0), card1)
   }
-  test("Jugar una carta de unidad implica que se encuntre en su zona de unidad respectiva") {
+  test("Jugar una carta de unidad implica que se encuentre en su zona de unidad respectiva") {
+    player2.robarCarta()
+    player2.robarCarta()
     player2.robarCarta()
     player2.jugarCarta(0)
-    player2.robarCarta()
+    assertEquals(player2.personalBoard.zonaCC(0), card7)
     player2.jugarCarta(0)
-    player2.robarCarta()
+    assertEquals(player2.personalBoard.zonaCD(0), card6)
     player2.jugarCarta(0)
+    assertEquals(player2.personalBoard.zonaCA(0), card5)
   }
   test("Ambos jugadores pueden jugar en el tablero de Clima, " +
     "y solo puede haber una carta de clima a la vez,y debe ser la ultima"){
     player1.robarCarta()
     player2.robarCarta()
     player1.jugarCarta(0)
+    assertEquals(tableroClima1.zonaClima(0), card1)
     player2.jugarCarta(0)
+    assertEquals(tableroClima1.zonaClima(0), card2)
   }
 }

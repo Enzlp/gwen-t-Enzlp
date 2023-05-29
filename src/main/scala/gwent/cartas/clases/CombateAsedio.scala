@@ -15,6 +15,7 @@ class CombateAsedio(nombre: String, descripcion: String, poder:Int) extends Abst
   /**Jugar una carta en el tablero.
    * El método hace un llamado a la función recibeCartaCA() propia del tablero, para que juegue la carta en la zona apropiada
    * @param tablero: Tablero en el que se jugará la carta
+   * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
    */
   override def jugarCarta(tablero: ITableroUnidad, tableroC: ITableroClima): Unit = {
     tablero.recibeCartaCA(this)

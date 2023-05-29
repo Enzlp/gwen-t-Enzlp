@@ -15,7 +15,8 @@ abstract class AbstractClima(nombre: String, descripcion: String)extends Abstrac
   /**Jugar Carta en el tablero
    * La funcion delega el jugar la carta al hacer un llamado a la función recibeCartaClima(), propia
    * del objeto tablero
-   * @param tablero: Tablero en el que se jugará la carta
+   * @param tablero: Tablero de unidad, no se usará para esta función
+   * @param tableroC: Tablero de Clima, es el tablero donde se jugará esta carta
    */
   override def jugarCarta(tablero: ITableroUnidad, tableroC: ITableroClima): Unit = {
     tableroC.recibeCarta(this)
