@@ -26,7 +26,7 @@ trait IJugador {
 
   /**Revuelve el mazo del Jugador
    */
-  def shuffleMazo(): ArrayBuffer[Carta]
+  def shuffleMazo(): Unit
 
   /** Juega Carta en un indice de la mano, en el tablero
    */
@@ -35,8 +35,9 @@ trait IJugador {
   /**Método para acceder a el tablero del jugador
    */
   def personalBoard: ITableroUnidad
+  
   /**Método de Acceso a la variable gemas
    */
-  def gemasActuales: Int
+  def gemas: Int
 
 }

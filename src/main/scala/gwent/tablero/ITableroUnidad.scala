@@ -2,6 +2,9 @@ package cl.uchile.dcc
 package gwent.tablero
 
 import gwent.cartas.Carta
+
+import cl.uchile.dcc.gwent.cartas.clases.{CombateAsedio, CombateCuerpoCuerpo, CombateDistancia}
+
 import scala.collection.mutable.ArrayBuffer
 
 /**Trait (interfaz) representa al tipo Tablero
@@ -9,23 +12,23 @@ import scala.collection.mutable.ArrayBuffer
  */
 trait ITableroUnidad {
   /**
-   * Recibe una [[Carta]] de combate cuerpo a cuerpo para posicionarla en la zona de Combate cuerpo a cuerpo.
+   * Recibe una [[Carta]] del tipo [[CombateCuerpoCuerpo]] para posicionarla en la zona de Combate cuerpo a cuerpo.
    * @param card:Carta a recibir para luego ser jugada en el tablero.
    */
-  def recibeCartaCC(card: Carta): Unit
+  def recibeCartaCC(card: CombateCuerpoCuerpo): Unit
 
   /**
-   * Recibe una [[Carta]] de combate a distancia para posicionarla en la zona de Combate a distancia.
+   * Recibe una [[Carta]] del tipo [[CombateDistancia]] para posicionarla en la zona de Combate a distancia.
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
-  def recibeCartaCD(card: Carta): Unit
+  def recibeCartaCD(card: CombateDistancia): Unit
 
   /**
-   * Recibe una [[Carta]] de combate Asedio para posicionarla en la zona de Combate de Asedio.
+   * Recibe una [[Carta]] del tipo [[CombateAsedio]] para posicionarla en la zona de Combate de Asedio.
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
 
-  def recibeCartaCA(card: Carta): Unit
+  def recibeCartaCA(card: CombateAsedio): Unit
   
   /**
    * Metodo para acceder a la zona de Combate Cuerpo a Cuerpo del tablero

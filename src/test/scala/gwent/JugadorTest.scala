@@ -35,11 +35,11 @@ class JugadorTest extends FunSuite {
     assertEquals(player.nombre, name)
   }
   test("Un jugador debe tener gemas"){
-    assertEquals(player.gemasActuales, gemas)
+    assertEquals(player.gemas, gemas)
   }
 
   test("Jugadores deben tener contador de Gemas, y este tiene que ser igual o mayor a 0") {
-    assert(player.gemasActuales >= 0)
+    assert(player.gemas >= 0)
   }
   test("Un Jugador debe poseer mano"){
     assertEquals(player.mano, mano1)

@@ -10,10 +10,11 @@ import gwent.tablero.{ITableroClima, ITableroUnidad}
  * El método jugarCarta(), será heredado por las clases de cartas que implementen este trait, y se implementará en esas clases.
  */
 trait Carta {
+  
   val nombre: String
   val descripcion: String
 
   /** Método para jugar un carta en el tablero
    */
-  def jugarCarta(tablero: ITableroUnidad, tableroC: ITableroClima): Unit
+  def jugarCarta(tableroU: ITableroUnidad, tableroC: ITableroClima): Unit
 }

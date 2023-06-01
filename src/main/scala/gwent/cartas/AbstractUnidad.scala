@@ -20,7 +20,8 @@ abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: In
   private var poderActual: Int = poder
 
   /**Método de acceso al valor del poder actual de la carta de unidad
-   * Este método nos permite acceder al valor del poder actual de la carta, y así no comprometer a la variable
+   * Este método nos permite acceder al valor del poder actual de la carta
+   * Es un Getter
    * @return EL poder actual 
    */
   def _poderActual: Int = poderActual
