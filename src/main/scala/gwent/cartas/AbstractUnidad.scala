@@ -14,7 +14,14 @@ package gwent.cartas
  */
 abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: Int) extends AbstractCarta(nombre, descripcion) {
   /** Poder De la carta despues de aplicarle los efectos de las demás cartas,
-   * parte siendo igual al poder propio de la carta original
+   * parte siendo igual al poder propio de la carta original, se declara privada para no permitir
+   * cambios externos
    */
-  var poderActual: Int = poder
+  private var poderActual: Int = poder
+
+  /**Método de acceso al valor del poder actual de la carta de unidad
+   * Este método nos permite acceder al valor del poder actual de la carta, y así no comprometer a la variable
+   * @return EL poder actual 
+   */
+  def _poderActual: Int = poderActual
 }

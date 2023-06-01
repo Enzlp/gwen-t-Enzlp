@@ -29,15 +29,17 @@ class JugadorTest extends FunSuite {
   val gemas = 2
   val player = new Jugador(name, gemas, mano1, mazo1, tableroClima1)
   val player2 = new Jugador(name, gemas, mano2, mazo2, tableroClima1)
+
+
   test("Jugadores deben poseer nombre") {
     assertEquals(player.nombre, name)
   }
   test("Un jugador debe tener gemas"){
-    assertEquals(player.gemas, gemas)
+    assertEquals(player.gemasActuales, gemas)
   }
 
   test("Jugadores deben tener contador de Gemas, y este tiene que ser igual o mayor a 0") {
-    assert(player.gemas >= 0)
+    assert(player.gemasActuales >= 0)
   }
   test("Un Jugador debe poseer mano"){
     assertEquals(player.mano, mano1)
@@ -47,10 +49,11 @@ class JugadorTest extends FunSuite {
   }
  
   test("Un jugador puede robar un carta del mazo") {
-    player.robarCarta()
+    val carta = player.robarCarta()
     /** Vemos que al robar un carta esta queda en la mano del jugador
      */
     assertEquals(player.mano(0), card1)
+    assertEquals(carta, card1)
     /** Vemos que en el mazo se elimina la carta robada
      */
     assertEquals(player.mazo.size, 1)

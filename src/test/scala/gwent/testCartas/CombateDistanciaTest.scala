@@ -15,7 +15,7 @@ class CombateDistanciaTest extends FunSuite {
     assertEquals(distancia1.poder, poder1)
   }
   test("el poder de una carta parte siendo el poder de la carta original"){
-    assertEquals(distancia1.poderActual, poder1)
+    assertEquals(distancia1._poderActual, poder1)
   }
 
 }

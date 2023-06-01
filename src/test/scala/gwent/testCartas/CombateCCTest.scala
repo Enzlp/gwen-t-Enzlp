@@ -13,14 +13,11 @@ class CombateCCTest extends FunSuite {
 
   test("Toda carta debe poseer un nombre, descripcion y poder"){
     assertEquals(cc1.nombre, nombre1)
-    assertEquals(nombre1, cc1.nombre)
     assertEquals(cc1.descripcion, descripcion1)
-    assertEquals(descripcion1, cc1.descripcion)
     assertEquals(cc1.poder, poder1)
-    assertEquals(poder1, cc1.poder)
   }
   test("El poder actual debe partir siendo el poder asignado a la carta"){
-    assertEquals(cc1.poderActual, poder1)
-    assertEquals(poder1, cc1.poderActual)
+    assertEquals(cc1._poderActual, poder1)
+    assertEquals(poder1, cc1._poderActual)
   }
 }

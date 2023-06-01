@@ -15,7 +15,7 @@ class CombateCuerpoCuerpo(nombre: String, descripcion: String, poder: Int)
   extends AbstractUnidad(nombre,descripcion,poder) {
   /**Jugar un carta en el tablero
    * La funcion delega el jugar la carta al hacer un llamado a la función recibeCartaCC(), propia
-   * del objeto tablero
+   * del objeto tablero, la carta a jugar es la misma carta que invoca el método para esto se usa [[this]]
    * @param tablero: Tablero en el que se jugará la carta
    * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
    */

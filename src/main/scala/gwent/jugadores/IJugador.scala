@@ -34,6 +34,9 @@ trait IJugador {
 
   /**Método para acceder a el tablero del jugador
    */
-  def personalBoard: ITableroUnidad 
+  def personalBoard: ITableroUnidad
+  /**Método de Acceso a la variable gemas
+   */
+  def gemasActuales: Int
 
 }

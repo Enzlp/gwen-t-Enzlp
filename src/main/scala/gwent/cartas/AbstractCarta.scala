@@ -8,5 +8,5 @@ package gwent.cartas
  * @param descripcion: Breve descripcion de el funcionamiento de la carta, sus habilidades y efecto en el campo de batalla
  */
 abstract class AbstractCarta protected(val nombre: String, val descripcion: String) extends Carta {
-
+  
 }
