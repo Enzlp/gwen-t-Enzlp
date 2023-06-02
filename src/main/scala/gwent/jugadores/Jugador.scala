@@ -12,6 +12,7 @@ import scala.util.Random as rand
 /** Clase que crea un jugador del juego Gwent
  * Un [[Jugador]], es un objeto que posee parametros nombre, gemas, mano y  mazo, y además la clase declara una
  * variable llamada board que genera un tablero personal para el jugador donde se jugarán las cartas
+ * @constructor: Crea un nuevo Jugador, con nombre, gemas, mano, mazo, y tablero de clima
  * @param nombre: Nombre del Jugador, es del tipo val por lo que no puede ser cambiada
  * @param _gemas: Numero de gemas del jugador, que representará la vida restante
  * @param _mano: Array que representa un subconjunto de cartas jugables del jugador

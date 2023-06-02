@@ -3,7 +3,7 @@ package gwent.cartas
 
 /**Clase abstracta que representa el tipo general de una carta de Unidad
  * 
- * Una [[Carta]] del tipo AbstractUnidad, es una carta que tiene asociado un nombre, una descripción y un poder propio.
+ * Un AbstractUnidad del tipo [[Carta]] , es una carta que tiene asociado un nombre, una descripción y un poder propio.
  * Además la clase AbstractUnidad declara una variable llamada poderActual, que muestra el poder actual de la carta despues
  * de aplicarle los efectos de las demas cartas.
  *
@@ -14,8 +14,7 @@ package gwent.cartas
  */
 abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: Int) extends AbstractCarta(nombre, descripcion) {
   /** Poder De la carta despues de aplicarle los efectos de las demás cartas,
-   * parte siendo igual al poder propio de la carta original, se declara privada para no permitir
-   * cambios externos
+   * parte siendo igual al [[poder]] propio de la carta original.
    */
   private var _poderActual: Int = poder
 

@@ -6,7 +6,7 @@ import gwent.cartas.AbstractCarta
 import cl.uchile.dcc.gwent.tablero.{ITableroClima, ITableroUnidad}
 
 /** Clase Abstracta que representa el tipo general de la clase Clima
- * 
+ * Un AbstractCLima del tipo [[Carta]], que implementa el nombre y la descripcion. 
  * @constructor Crea una nueva ´AbstractCLima´, con nombre y descripcion
  * @param nombre : El nombre de la carta, identificador de la carta
  * @param descripcion: Breve descripcion de el funcionamiento de la carta, sus habilidades y efecto en el campo de batalla

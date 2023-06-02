@@ -8,8 +8,9 @@ import cl.uchile.dcc.gwent.cartas.clases.{CombateAsedio, CombateCuerpoCuerpo, Co
 
 import scala.collection.mutable.ArrayBuffer
 
-/**Clase Abstracta que representa un tablero individual del jugador
- * La clase implementa zonas donde jugar cartas con Arrays.
+/**Clase que representa un tablero individual del jugador
+ * La clase TableroUnidad es un tipo de [[ITableroUnidad]] que implementa zonas donde jugar cartas con Arrays.
+ * @constructor: Crea un nuevo 'TableroUnidad'.
  */
 class TableroUnidad extends ITableroUnidad {
   /** Las zonas donde se juegan las cartas en el tablero se identifican con Arrays.

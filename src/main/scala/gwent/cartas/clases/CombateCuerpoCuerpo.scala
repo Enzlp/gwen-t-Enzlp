@@ -6,7 +6,9 @@ import gwent.cartas.AbstractUnidad
 import cl.uchile.dcc.gwent.tablero.{ITableroClima, ITableroUnidad}
 
 /**Clase que crea cartas de Unidad del tipo Combate Cuerpo a Cuerpo
- *
+ * Un objeto CombateCuerpoCuerpo, es del tipo [[Carta]] por lo que posee un nombre y descripcion, y además un 
+ * poder asignado a la carta.
+ * @constructor: Crea un CombateCuerpoCuerpo con nombre, descripcion y poder.
  * @param nombre : El nombre de la carta, identificador de la carta
  * @param descripcion: Breve descripcion de el funcionamiento de la carta, sus habilidades y efecto en el campo de batalla
  * @param poder: valor del poder o fuerza de la carta
