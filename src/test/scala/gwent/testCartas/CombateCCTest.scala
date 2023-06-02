@@ -17,7 +17,7 @@ class CombateCCTest extends FunSuite {
     assertEquals(cc1.poder, poder1)
   }
   test("El poder actual debe partir siendo el poder asignado a la carta"){
-    assertEquals(cc1._poderActual, poder1)
-    assertEquals(poder1, cc1._poderActual)
+    assertEquals(cc1.poderActual, poder1)
+    assertEquals(poder1, cc1.poderActual)
   }
 }

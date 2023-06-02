@@ -17,12 +17,12 @@ abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: In
    * parte siendo igual al poder propio de la carta original, se declara privada para no permitir
    * cambios externos
    */
-  private var poderActual: Int = poder
+  private var _poderActual: Int = poder
 
   /**Método de acceso al valor del poder actual de la carta de unidad
    * Este método nos permite acceder al valor del poder actual de la carta
    * Es un Getter
    * @return EL poder actual 
    */
-  def _poderActual: Int = poderActual
+  def poderActual: Int = _poderActual
 }

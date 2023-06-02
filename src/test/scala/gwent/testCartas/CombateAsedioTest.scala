@@ -15,6 +15,6 @@ class CombateAsedioTest extends FunSuite{
     assertEquals(asedio1.poder, poder1)
   }
   test("el poder actual de una carta parte siendo el poder de la carta original") {
-    assertEquals(asedio1._poderActual, poder1)
+    assertEquals(asedio1.poderActual, poder1)
   }
 }
