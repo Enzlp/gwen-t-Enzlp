@@ -4,7 +4,10 @@ import gwent.cartas.Carta
 
 class TurnoState extends GameState {
     override def jugarCarta(card: Carta): Unit = {
-        
+
+    }
+    override def robarCarta(): Unit = {
+
     }
     override def pasarTurno(): Unit ={
 
