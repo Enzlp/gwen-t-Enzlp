@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-package gwent.tablero2
+package gwent.observer
 
 import gwent.cartas.Carta
 import scala.collection.mutable.ArrayBuffer

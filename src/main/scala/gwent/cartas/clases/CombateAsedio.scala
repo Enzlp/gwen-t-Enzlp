@@ -20,6 +20,13 @@ class CombateAsedio(nombre: String, descripcion: String, poder:Int) extends Abst
    * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
    */
   override def jugarCarta(tableroU: ITableroUnidad, tableroC: ITableroClima): Unit = {
-    tableroU.recibeCartaCA(this)
+    tableroU.recibeCarta(this)
   }
+  def update(carta: LluviaTorrencial): Unit = {
+    this._poderActual = 1
+  }
+  def update(carta: ClimaDespejado): Unit = {
+    this._poderActual = poder
+  }
+
 }

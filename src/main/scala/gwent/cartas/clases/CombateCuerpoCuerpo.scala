@@ -22,6 +22,17 @@ class CombateCuerpoCuerpo(nombre: String, descripcion: String, poder: Int)
    * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
    */
   override def jugarCarta(tableroU: ITableroUnidad, tableroC: ITableroClima): Unit = {
-    tableroU.recibeCartaCC(this)
+    tableroU.recibeCarta(this)
+  }
+
+  def update(carta: EscarchaMordiente): Unit = {
+    this._poderActual = 1
+  }
+
+  def update(carta: ClimaDespejado): Unit = {
+    this._poderActual = poder
+  }
+  def updateRefuerzo(): Unit = {
+
   }
 }

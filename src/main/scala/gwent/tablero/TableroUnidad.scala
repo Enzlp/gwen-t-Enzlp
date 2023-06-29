@@ -38,21 +38,22 @@ class TableroUnidad extends ITableroUnidad {
    * en la zona de combate cuerpo a cuerpo
    * @param card:Carta a recibir para luego ser jugada en el tablero.
    */
-  override def recibeCartaCC(card: CombateCuerpoCuerpo): Unit = {
+  override def recibeCarta(card: CombateCuerpoCuerpo): Unit = {
     zonaCC.addOne(card)
+
   }
   /** Método que recibe una carta de Asedio, para luego posicionarla
    * en la zona de combate de asedio
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
-  override def recibeCartaCA(card: CombateAsedio):Unit ={
+  override def recibeCarta(card: CombateAsedio):Unit ={
     zonaCA.addOne(card)
   }
   /** Método que recibe una carta de combate a Distancia, para luego posicionarla
    * en la zona de combate a distancia
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
-  override def recibeCartaCD(card: CombateDistancia): Unit = {
+  override def recibeCarta(card: CombateDistancia): Unit = {
     zonaCD.addOne(card)
   }
 }

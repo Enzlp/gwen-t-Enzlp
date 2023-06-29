@@ -15,20 +15,20 @@ trait ITableroUnidad {
    * Recibe una [[Carta]] del tipo [[CombateCuerpoCuerpo]] para posicionarla en la zona de Combate cuerpo a cuerpo.
    * @param card:Carta a recibir para luego ser jugada en el tablero.
    */
-  def recibeCartaCC(card: CombateCuerpoCuerpo): Unit
+  def recibeCarta(card: CombateCuerpoCuerpo): Unit
 
   /**Método para jugar una carta en el tablero
    * Recibe una [[Carta]] del tipo [[CombateDistancia]] para posicionarla en la zona de Combate a distancia.
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
-  def recibeCartaCD(card: CombateDistancia): Unit
+  def recibeCarta(card: CombateDistancia): Unit
 
   /** Método para jugar una carta en el tablero
    * Recibe una [[Carta]] del tipo [[CombateAsedio]] para posicionarla en la zona de Combate de Asedio.
    * @param card: Carta a recibir para luego ser jugada en el tablero.
    */
 
-  def recibeCartaCA(card: CombateAsedio): Unit
+  def recibeCarta(card: CombateAsedio): Unit
   
   /**Metodo para acceder a la zona de Combate Cuerpo a Cuerpo del tablero
    * @return Un array con las cartas de Combate Cuerpo a Cuerpo en el tablero

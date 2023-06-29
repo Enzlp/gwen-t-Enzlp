@@ -30,4 +30,5 @@ class TableroClima extends ITableroClima {
     zonaClima.addOne(card)
   }
 
+
 }

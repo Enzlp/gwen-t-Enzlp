@@ -13,12 +13,20 @@ import cl.uchile.dcc.gwent.tablero.{ITableroClima, ITableroUnidad}
  */
 class CombateDistancia(nombre:String, descripcion:String, poder:Int)
   extends AbstractUnidad(nombre,descripcion, poder){
-  /**Juegar una carta e Combate A Distancia
+  /**Jugar una carta e Combate A Distancia
    * El método hace un llamado a la funcion recibeCartaCD(), propia del tablero, para jugar la carta en la zona correspondiente
    * @param tableroU: Tablero donde se jugará la carta
    * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
    */
   override def jugarCarta(tableroU: ITableroUnidad, tableroC: ITableroClima): Unit = {
-    tableroU.recibeCartaCD(this)
+    tableroU.recibeCarta(this)
+  }
+
+  def update(carta: NieblaImpenetrable): Unit = {
+    this._poderActual = 1
+  }
+
+  def update(carta: ClimaDespejado): Unit = {
+    this._poderActual = poder
   }
 }
