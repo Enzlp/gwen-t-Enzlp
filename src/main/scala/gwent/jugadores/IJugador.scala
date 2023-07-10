@@ -2,7 +2,7 @@ package cl.uchile.dcc
 package gwent.jugadores
 
 import gwent.cartas.Carta
-import gwent.tablero.ITableroUnidad
+import gwent.tablero.ITablero
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -30,12 +30,8 @@ trait IJugador {
 
   /** Juega Carta en un indice de la mano, en el tablero
    */
-  def jugarCarta(indice: Int): Unit
+  def jugarCarta(indice: Int, board: ITablero): Unit
 
-  /**Método para acceder a el tablero del jugador
-   */
-  def personalBoard: ITableroUnidad
-  
   /**Método de Acceso a la variable gemas
    */
   def gemas: Int

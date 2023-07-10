@@ -7,7 +7,7 @@ import munit.FunSuite
 import scala.collection.mutable.ArrayBuffer
 import cl.uchile.dcc.gwent.cartas.clases.{ClimaDespejado, CombateAsedio, CombateCuerpoCuerpo, CombateDistancia, EscarchaMordiente}
 import cl.uchile.dcc.gwent.jugadores.Jugador
-import cl.uchile.dcc.gwent.tablero.TableroClima
+
 class JugadorTest extends FunSuite {
   val nombreCarta = "nombre_generico"
   val descripcion = "descripcion"
@@ -16,19 +16,14 @@ class JugadorTest extends FunSuite {
   val card3 = new CombateAsedio(nombreCarta, descripcion, 5)
   val card4 = new CombateCuerpoCuerpo(nombreCarta, descripcion, 5)
   val card5 = new EscarchaMordiente(nombreCarta, descripcion)
-
   val mano1 = ArrayBuffer[Carta]()
   val mano2 = ArrayBuffer[Carta]()
-
   val mazo1 = ArrayBuffer[Carta](card1,card2)
   val mazo2 = ArrayBuffer[Carta](card3, card4, card5)
-
-  val tableroClima1 = new TableroClima
-
   val name = "Alejandro"
   val gemas = 2
-  val player = new Jugador(name, gemas, mano1, mazo1, tableroClima1)
-  val player2 = new Jugador(name, gemas, mano2, mazo2, tableroClima1)
+  val player = new Jugador(name, gemas, mano1, mazo1)
+  val player2 = new Jugador(name, gemas, mano2, mazo2)
 
 
   test("Jugadores deben poseer nombre") {

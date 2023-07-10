@@ -3,7 +3,9 @@ package gwent.cartas.clases
 
 import gwent.cartas.AbstractUnidad
 
-import cl.uchile.dcc.gwent.tablero.{ITableroClima, ITableroUnidad}
+import cl.uchile.dcc.gwent.jugadores.{IJugador, Jugador}
+import cl.uchile.dcc.gwent.tablero.ITablero
+import cl.uchile.dcc.gwent.cartas.Carta
 
 /**Clase que crea cartas de Unidad del tipo Combate Cuerpo a Cuerpo
  * Un objeto CombateCuerpoCuerpo, es del tipo [[Carta]] por lo que posee un nombre y descripcion, y además un 
@@ -15,13 +17,14 @@ import cl.uchile.dcc.gwent.tablero.{ITableroClima, ITableroUnidad}
  */
 class CombateCuerpoCuerpo(nombre: String, descripcion: String, poder: Int)
   extends AbstractUnidad(nombre,descripcion,poder) {
-  /**Jugar un carta en el tablero
-   * La funcion delega el jugar la carta al hacer un llamado a la función recibeCartaCC(), propia
+  /** Jugar un carta en el tablero
+   * La función delega el jugar la carta al hacer un llamado a la función recibeCartaCC(), propia
    * del objeto tablero, la carta a jugar es la misma carta que invoca el método para esto se usa [[this]]
-   * @param tableroU: Tablero en el que se jugará la carta
-   * @param tableroC: Tablero de clima, no se usará en esta función, esta ahí para poder usar la misma interfaz de Carta
+   *
+   * @param tablero : Tablero en el que se jugará la carta
    */
-  override def jugarCarta(tableroU: ITableroUnidad, tableroC: ITableroClima): Unit = {
-    tableroU.recibeCartaCC(this)
+  override def jugarCarta(tablero: ITablero, jugador: IJugador): Unit = {
+    tablero.jugarCartaCC(this, jugador)
   }
+
 }
