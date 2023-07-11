@@ -72,4 +72,7 @@ class Jugador (val nombre: String, private var _gemas : Int, private var _mano :
     _mano.remove(indice)
     card.jugarCarta(board, this)
   }
+  override def update(): Unit ={
+    
+  }
 }

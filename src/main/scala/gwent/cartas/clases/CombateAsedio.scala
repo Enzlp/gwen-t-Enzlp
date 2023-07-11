@@ -2,9 +2,9 @@ package cl.uchile.dcc
 package gwent.cartas.clases
 
 import gwent.cartas.AbstractUnidad
-
 import cl.uchile.dcc.gwent.jugadores.IJugador
 import cl.uchile.dcc.gwent.tablero.ITablero
+import cl.uchile.dcc.gwent.cartas.clases.EscarchaMordiente
 
 /**Clase que crea cartas de unidad del tipo Combate de Asedio
  * Un objeto CombateAsedio es del tipo [[carta]], y por lo tanto posee nombre y descripcion, pero además posee poder asignado
@@ -23,4 +23,6 @@ class CombateAsedio(nombre: String, descripcion: String, poder:Int) extends Abst
   override def jugarCarta(tablero: ITablero, jugador: IJugador): Unit = {
     tablero.jugarCartaCA(this, jugador)
   }
+
+
 }
