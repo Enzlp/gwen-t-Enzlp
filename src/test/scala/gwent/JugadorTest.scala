@@ -16,10 +16,10 @@ class JugadorTest extends FunSuite {
   val card3 = new CombateAsedio(nombreCarta, descripcion, 5)
   val card4 = new CombateCuerpoCuerpo(nombreCarta, descripcion, 5)
   val card5 = new EscarchaMordiente(nombreCarta, descripcion)
-  val mano1 = ArrayBuffer[Carta]()
-  val mano2 = ArrayBuffer[Carta]()
-  val mazo1 = ArrayBuffer[Carta](card1,card2)
-  val mazo2 = ArrayBuffer[Carta](card3, card4, card5)
+  val mano1: ArrayBuffer[Carta] = ArrayBuffer()
+  val mano2: ArrayBuffer[Carta] = ArrayBuffer()
+  val mazo1: ArrayBuffer[Carta] = ArrayBuffer(card1, card2)
+  val mazo2: ArrayBuffer[Carta] = ArrayBuffer(card3, card4, card5)
   val name = "Alejandro"
   val gemas = 2
   val player = new Jugador(name, gemas, mano1, mazo1)

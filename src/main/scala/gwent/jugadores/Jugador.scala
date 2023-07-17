@@ -3,10 +3,14 @@ package gwent.jugadores
 
 import gwent.jugadores.IJugador
 import gwent.cartas.Carta
-import gwent.tablero.{ITablero}
+import gwent.tablero.ITablero
+
+import cl.uchile.dcc.gwent.gemObserver.AbstractSubject
+
 import scala.Equals
 import scala.collection.mutable.ArrayBuffer
 import scala.util.Random as rand
+import cl.uchile.dcc.gwent.gemObserver.Loser
 
 /** Clase que crea un jugador del juego Gwent
  * Un [[Jugador]], es un objeto que posee parametros nombre, gemas, mano y  mazo, y además la clase declara una
@@ -19,7 +23,7 @@ import scala.util.Random as rand
  * ordenada y unitaria
  */
 class Jugador (val nombre: String, private var _gemas : Int, private var _mano : ArrayBuffer[Carta]
-               ,private var _mazo: ArrayBuffer[Carta]) extends IJugador {
+               ,private var _mazo: ArrayBuffer[Carta]) extends AbstractSubject[Loser] with IJugador {
 
   /** Método de acceso a las gemas del jugador
    * Es nuestro getter de las gemas del jugador(el hp)
@@ -72,7 +76,11 @@ class Jugador (val nombre: String, private var _gemas : Int, private var _mano :
     _mano.remove(indice)
     card.jugarCarta(board, this)
   }
-  override def update(): Unit ={
-    
+  override def perderRonda: Unit = {
+    _gemas = _gemas-1
+    if(_gemas == 0){
+      notifyObservers(new Loser(nombre))
+    }
   }
+
 }

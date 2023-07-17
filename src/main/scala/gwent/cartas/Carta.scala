@@ -1,7 +1,9 @@
 package cl.uchile.dcc
 package gwent.cartas
 
-import gwent.tablero.{ITablero}
+import gwent.tablero.ITablero
+
+import cl.uchile.dcc.gwent.effectVisitor.{AbstractEffectVisitor, IEffectVisitor}
 import cl.uchile.dcc.gwent.jugadores.IJugador
 /**Trait (interfaz) que representa una carta en Gwent
  * Este trait posee 3 declaraciones, 2 propiedades y un método.
@@ -17,4 +19,6 @@ trait Carta {
   /** Método para jugar un carta en el tablero
    */
   def jugarCarta(tablero: ITablero, jugador: IJugador): Unit
+
+
 }

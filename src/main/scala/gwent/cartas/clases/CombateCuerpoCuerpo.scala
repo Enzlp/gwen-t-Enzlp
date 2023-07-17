@@ -6,6 +6,7 @@ import gwent.cartas.AbstractUnidad
 import cl.uchile.dcc.gwent.jugadores.{IJugador, Jugador}
 import cl.uchile.dcc.gwent.tablero.ITablero
 import cl.uchile.dcc.gwent.cartas.Carta
+import cl.uchile.dcc.gwent.effectVisitor.IEffectVisitor
 
 /**Clase que crea cartas de Unidad del tipo Combate Cuerpo a Cuerpo
  * Un objeto CombateCuerpoCuerpo, es del tipo [[Carta]] por lo que posee un nombre y descripcion, y además un 
@@ -26,5 +27,6 @@ class CombateCuerpoCuerpo(nombre: String, descripcion: String, poder: Int)
   override def jugarCarta(tablero: ITablero, jugador: IJugador): Unit = {
     tablero.jugarCartaCC(this, jugador)
   }
+  override def acceptVisitor(visitor: IEffectVisitor): Unit = visitor.aplicarEfectoCC(this)
 
 }

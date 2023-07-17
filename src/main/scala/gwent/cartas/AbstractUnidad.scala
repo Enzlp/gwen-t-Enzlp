@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.cartas
 
+import gwent.effectVisitor.IEffectVisitor
+
 /**Clase abstracta que representa el tipo general de una carta de Unidad
  * 
  * Un AbstractUnidad del tipo [[Carta]] , es una carta que tiene asociado un nombre, una descripción y un poder propio.
@@ -12,7 +14,9 @@ package gwent.cartas
  * @param descripcion: Breve descripcion de el funcionamiento de la carta, sus habilidades y efecto en el campo de batalla
  * @param poder: valor del poder o fuerza de la carta
  */
-abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: Int) extends AbstractCarta(nombre, descripcion) {
+abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: Int,
+                              val vinculoEstrecho: Boolean, val refuerzoMoral: Boolean)
+  extends AbstractCarta(nombre, descripcion) {
   /** Poder De la carta después de aplicarle los efectos de las demás cartas,
    * parte siendo igual al [[poder]] propio de la carta original.
    */
@@ -24,6 +28,11 @@ abstract class AbstractUnidad(nombre: String, descripcion: String, val poder: In
    *
    * @return EL poder actual 
    */
-  def poderActual: Int = _poderActual
-  
+  def poderActual: Int = {
+    val x = _poderActual
+    x
+  }
+  def cambiarPoderActual(newPower: Int) : Unit ={ _poderActual = newPower}
+  def acceptVisitor(visitor: IEffectVisitor) ={/*...*/}
+
 }

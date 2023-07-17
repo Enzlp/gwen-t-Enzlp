@@ -3,6 +3,7 @@ package gwent.cartas.clases
 
 import gwent.cartas.AbstractUnidad
 
+import cl.uchile.dcc.gwent.effectVisitor.IEffectVisitor
 import cl.uchile.dcc.gwent.jugadores.IJugador
 import cl.uchile.dcc.gwent.tablero.ITablero
 /**Clase que crea cartas unidad de tipo CombateDistancia
@@ -23,4 +24,5 @@ class CombateDistancia(nombre:String, descripcion:String, poder:Int)
   override def jugarCarta(tablero: ITablero, jugador: IJugador): Unit = {
     tablero.jugarCartaCD(this, jugador)
   }
+  override def acceptVisitor(visitor: IEffectVisitor): Unit = visitor.aplicarEfectoCD(this)
 }

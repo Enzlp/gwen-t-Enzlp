@@ -35,5 +35,7 @@ trait IJugador {
   /**Método de Acceso a la variable gemas
    */
   def gemas: Int
-  def update: Unit
+
+  def perderRonda: Unit
+
 }
