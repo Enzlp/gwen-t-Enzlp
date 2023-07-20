@@ -7,6 +7,7 @@ import cl.uchile.dcc.gwent.excepciones.InvalidTransitionException
 import cl.uchile.dcc.gwent.jugadores.IJugador
 import scala.collection.mutable.ArrayBuffer
 class GameState(var controller: GameController){
+  
   def setController(controller: GameController): Unit ={
     this.controller = controller
   }
@@ -16,7 +17,7 @@ class GameState(var controller: GameController){
   def startRound(): Unit ={
     throw new InvalidTransitionException("Transición invalida entre estados")
   }
-  def playCard(card: Carta): Unit = {
+  def playCard(): Unit = {
     throw new InvalidTransitionException("Transición invalida entre estados")
   }
   def passTurn(): Unit = {
@@ -26,7 +27,7 @@ class GameState(var controller: GameController){
     throw new InvalidTransitionException("Transición invalida entre estados")
   }
   def noGems(): Unit ={
-    throw new InvalidTransitionException("Transición invalida entre estados")
+    controller.setState(new GameEnd(controller))
   }
   def stillGems(): Unit ={
     throw new InvalidTransitionException("Transición invalida entre estados")

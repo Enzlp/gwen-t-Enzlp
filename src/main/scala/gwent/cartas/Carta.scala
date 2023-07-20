@@ -3,7 +3,7 @@ package gwent.cartas
 
 import gwent.tablero.ITablero
 
-import cl.uchile.dcc.gwent.effectVisitor.{AbstractEffectVisitor, IEffectVisitor}
+
 import cl.uchile.dcc.gwent.jugadores.IJugador
 /**Trait (interfaz) que representa una carta en Gwent
  * Este trait posee 3 declaraciones, 2 propiedades y un método.
@@ -12,7 +12,7 @@ import cl.uchile.dcc.gwent.jugadores.IJugador
  * El método jugarCarta(), será heredado por las clases de cartas que implementen este trait, y se implementará en esas clases.
  */
 trait Carta {
-  
+  /** value del nombre y descripción de las carta */
   val nombre: String
   val descripcion: String
 

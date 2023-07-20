@@ -5,7 +5,9 @@ import gwent.cartas.Carta
 import cl.uchile.dcc.gwent.estados.GameController
 import cl.uchile.dcc.gwent.estados.Player1TurnState
 class Player2TurnState(controller: GameController) extends GameState(controller){
-  override def playCard(card: Carta): Unit = {
+ 
+  
+  override def playCard(): Unit = {
     controller.setState(new Player1TurnState(controller))
   }
 

@@ -13,9 +13,8 @@ import scala.util.Random as rand
 import cl.uchile.dcc.gwent.gemObserver.Loser
 
 /** Clase que crea un jugador del juego Gwent
- * Un [[Jugador]], es un objeto que posee parametros nombre, gemas, mano y  mazo, y además la clase declara una
- * variable llamada board que genera un tablero personal para el jugador donde se jugarán las cartas
- * @constructor: Crea un nuevo Jugador, con nombre, gemas, mano, mazo, y tablero de clima
+ * Un [[Jugador]], es un objeto que posee parámetros nombre, gemas, mano y  mazo. 
+ * @constructor Crea un nuevo Jugador, con nombre, gemas, mano y mazo
  * @param nombre: Nombre del Jugador, es del tipo val por lo que no puede ser cambiada
  * @param _gemas: Numero de gemas del jugador, que representará la vida restante
  * @param _mano: Array que representa un subconjunto de cartas jugables del jugador
@@ -76,6 +75,14 @@ class Jugador (val nombre: String, private var _gemas : Int, private var _mano :
     _mano.remove(indice)
     card.jugarCarta(board, this)
   }
+
+  /**Resta una gema de la vida del jugador
+   * 
+   * Este método resta una gema a las gemas del jugador, si al hacer esta operación se llega a que las gemas del
+   * jugador dan 0, entonces se invoca la función notifyObservers, para notificar a los observadores que el jugador
+   * perdió el Juego. El parámetro de la función notifyObservers, es un objeto del tipo [[Loser]], con le nombre del 
+   * jugador esto se usará después por el suscriptor para determinar quien perdió el juego. 
+   */
   override def perderRonda: Unit = {
     _gemas = _gemas-1
     if(_gemas == 0){

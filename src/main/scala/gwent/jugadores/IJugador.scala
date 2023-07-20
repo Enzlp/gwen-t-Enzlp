@@ -35,7 +35,7 @@ trait IJugador {
   /**Método de Acceso a la variable gemas
    */
   def gemas: Int
-
+  /**Resta una gema de la vida del jugador */
   def perderRonda: Unit
 
 }

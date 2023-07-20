@@ -11,9 +11,9 @@ import cl.uchile.dcc.gwent.cartas.clases.{CombateCuerpoCuerpo, CombateDistancia,
 import cl.uchile.dcc.gwent.tablero.Tablero
 
 class TableroTest extends FunSuite{
-  val CC = new CombateCuerpoCuerpo("", "",5)
-  val CoD = new CombateDistancia("","",5)
-  val CA = new CombateAsedio("","",5)
+  val CC = new CombateCuerpoCuerpo("", "",5, false, false)
+  val CoD = new CombateDistancia("","",5, false, false)
+  val CA = new CombateAsedio("","",5, false, false)
   val LT = new LluviaTorrencial("","")
   val EM = new EscarchaMordiente("","")
   val NI = new NieblaImpenetrable("","")

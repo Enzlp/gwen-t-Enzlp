@@ -11,5 +11,5 @@ import gwent.cartas.CartaClima
  * @param descripcion: Breve descripcion de el funcionamiento de la carta, sus habilidades y efecto en el campo de batalla
  */
 class ClimaDespejado(nombre: String, descripcion: String) extends CartaClima(nombre, descripcion){
-
+  
 }
