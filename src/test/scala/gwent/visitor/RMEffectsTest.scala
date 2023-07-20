@@ -21,4 +21,8 @@ class RMEffectsTest extends FunSuite{
     assert(cd.poderActual == (cd.poder+1))
     assert(cc.poderActual == (cc.poder+1))
   }
+  test("se almacena la carta jugada"){
+    visitor.cartaJugada(ca)
+    assert(visitor._cartaJugada(0) == ca)
+  }
 }

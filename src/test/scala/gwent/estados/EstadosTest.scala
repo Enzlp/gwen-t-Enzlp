@@ -57,7 +57,6 @@ class EstadosTest extends FunSuite{
   }
   test("Transición desde Player2TurnState a Player1TurnState al pasar el turno") {
     gameController.passTurn(jugador1)
-    gameController.passTurn(jugador1)
     val estado = gameController.estadoActual
     assert(estado.isInstanceOf[Player1TurnState])
   }

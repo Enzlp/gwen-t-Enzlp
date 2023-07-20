@@ -6,11 +6,25 @@ import cl.uchile.dcc.gwent.cartas.Carta
 import cl.uchile.dcc.gwent.excepciones.InvalidTransitionException
 import cl.uchile.dcc.gwent.jugadores.IJugador
 import scala.collection.mutable.ArrayBuffer
+
+/**Clase que representa un estado del controlador del juego
+ *
+ * Es parte del State pattern, define un esqueleto para los estados concretos que extenderán esta clase. Posee un método
+ * para cambiar el controlador de el estado. Y las funciones que desencadenan el cambio de los estados en el controlador
+ * están definidas para arrojar excepciones cuando haya una transición invalida
+ * @param controller controlador asociado al estado
+ */
 class GameState(var controller: GameController){
-  
+  /**Método que cambia el controlador por uno dado
+   * Este método recibe un controlador y lo establece como el controlador asociado a este estado
+   * @param controller controlador nuevo al que se va a cambiar
+   */
   def setController(controller: GameController): Unit ={
     this.controller = controller
   }
+
+  /**Todos los siguientes son métodos de cambio de estado que están iniciados ára lanzar una excepcion de transición 
+   * invalida entre estados, esto luego se cambiara con override en cada subclase*/
   def startGame(jugadores: ArrayBuffer[IJugador]) : Unit = {
     throw new InvalidTransitionException("Transición invalida entre estados")
   }
