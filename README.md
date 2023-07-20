@@ -15,8 +15,8 @@ This project's goal is to create a (simplified) clone of the
 
 **The rest of the documentation is left for the users of this template to complete**
 # Explicación clases
-**Jugador**: Esta clase es el constructor de los jugadores del juego Gwent, cada objeto Jugador es iniciado con un value nombre, y tres variables privadas, _mano, _mazo, _gemas.
-**GameController**: Esta clase es unconstructor de controladores del juego, el controlador de encarga de seguir la progresión lógica del juego y maneja la transición entre
+1.**Jugador**: Esta clase es el constructor de los jugadores del juego Gwent, cada objeto Jugador es iniciado con un value nombre, y tres variables privadas, _mano, _mazo, _gemas.
+2.**GameController**: Esta clase es unconstructor de controladores del juego, el controlador de encarga de seguir la progresión lógica del juego y maneja la transición entre
 estados del juego.
 # Diagrama de estados
 ![Diagrama de estados](docs/estados.jpg)
