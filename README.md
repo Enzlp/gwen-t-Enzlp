@@ -13,7 +13,7 @@ This project's goal is to create a (simplified) clone of the
 
 ---
 
-**The rest of the documentation is left for the users of this template to complete**
+
 El objetivo de este proyecto es crear una versión simplificada del juego Gwent (ver link de referencia más arriba), para esto se debió tomar en consideración el siguiente enunciado:
 
 # 1. Descripción
