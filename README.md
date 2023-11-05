@@ -26,16 +26,16 @@ Llamaremos jugador a cada uno de los participantes de una partida, estos serán 
 computadora.
 Cada jugador tiene:
 
-* Nombre: Es el identificador del jugador. Es una manera de distinguir a los distintos participantes en la partida.
-* Sección del tablero: Es la zona del tablero que le corresponde al jugador. En ella, el jugador ubicará sus cartas.
-* Contador de gemas: Es la cantidad de gemas que tiene el jugador. Estas gemas representan la «vida» del jugador.
-* Mazo de cartas: Es el conjunto de cartas que tiene el jugador. Desde aquí, podrá robar cartas.
-* Mano de cartas: Es el conjunto de cartas que el jugador tiene en su mano. Estas cartas pueden ser utilizadas para jugar durante la partida
+* **Nombre**: Es el identificador del jugador. Es una manera de distinguir a los distintos participantes en la partida.
+* **Sección del tablero**: Es la zona del tablero que le corresponde al jugador. En ella, el jugador ubicará sus cartas.
+* **Contador de gemas**: Es la cantidad de gemas que tiene el jugador. Estas gemas representan la «vida» del jugador.
+* **Mazo de cartas**: Es el conjunto de cartas que tiene el jugador. Desde aquí, podrá robar cartas.
+* **Mano de cartas**: Es el conjunto de cartas que el jugador tiene en su mano. Estas cartas pueden ser utilizadas para jugar durante la partida
 
 Las acciones que un jugador puede realizar son:
 
-* Jugar una carta de su mano: Seleccionar una carta de su mano y colocarla en el tablero para realizar una acción
-* Robar una carta del mazo: Tomar una carta del mazo y agregarla a su mano
+* **Jugar una carta de su mano**: Seleccionar una carta de su mano y colocarla en el tablero para realizar una acción
+* **Robar una carta del mazo**: Tomar una carta del mazo y agregarla a su mano
 
 # 1.2 Tablero
 El tablero es la representación física del campo de batalla en el que los jugadores colocan sus cartas. Está dividido en dos secciones simétricas, una para cada jugador, y cada sección se subdivide en tres zonas: la zona de combate cuerpo a cuerpo, la zona de combate a distancia y la zona de asedio. Utilizaremos indistintamente los términos tablero y campo de batalla, así como los términos zona y fila.
@@ -56,14 +56,14 @@ Las cartas de unidad pueden tener una habilidad especial que se activa cuando la
 A continuación se presentan los efectos que debe implementar su programa:
 
 # 1.4.1 Carta de Unidad
-* Refuerzo moral: Cuando la carta entra en el campo, añade +1 a la fuerza de todas las cartas en su fila, excepto a sí misma.
-* Vínculo estrecho: Si ya existe una carta con el mismo nombre en la fila, duplica la fuerza de esa(s) carta(s), incluyéndose a sí misma.
+* **Refuerzo moral**: Cuando la carta entra en el campo, añade +1 a la fuerza de todas las cartas en su fila, excepto a sí misma.
+* **Vínculo estrecho**: Si ya existe una carta con el mismo nombre en la fila, duplica la fuerza de esa(s) carta(s), incluyéndose a sí misma.
 
 # 1.4.2 Cartas de Clima
-* Escarcha Mordiente: Establece el valor de fuerza de todas las cartas de combate cuerpo a cuerpo en 1.
-* Niebla impenetrable: Establece el valor de fuerza de todas las cartas de combate a distancia a 1.
-* Lluvia torrencial: Establece el valor de todas las cartas de asedio a 1.
-* Clima despejado: Elimina todos los efectos climáticos actualmente en efecto en el campo de batalla.
+* **Escarcha Mordiente**: Establece el valor de fuerza de todas las cartas de combate cuerpo a cuerpo en 1.
+* **Niebla impenetrable**: Establece el valor de fuerza de todas las cartas de combate a distancia a 1.
+* **Lluvia torrencial**: Establece el valor de todas las cartas de asedio a 1.
+* **Clima despejado**: Elimina todos los efectos climáticos actualmente en efecto en el campo de batalla.
 
 # 1.5 Reglas del Juego
 
@@ -79,3 +79,7 @@ Para este proyecto se implementará la parte de modelo del patrón modelo-vista-
 **Modelo:** Se le solicitará que cree todas las entidades necesarias que servirán de estructura base del proyecto y las interacciones posibles entre dichas entidades. Las entidades en este caso se refieren a los
 elementos que componen el juego.
 
+-------
+# Descarga y revisión del proyecto
+
+Para descargar y revisar el proyecto porfavor dirigirse a la branch **tarea-3/entrega-final**, este es el estado final del proyecto,  y ahi descargar el zip correspondiente en las opciones de Code.
